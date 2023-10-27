@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Interactive Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add CSS for the filter buttons */
+        .filter-btn {
+            cursor: pointer;
+            padding: 8px 16px;
+            margin: 5px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ramya Krishna</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm RAMYA, a passionate full-stack web developer with a love for creating
+            beautiful, user-friendly websites and web applications.
+        </p>
+        <p>
+            My journey into web development began when I discovered the magic of coding. Since then,
+            I've been on an exciting adventure, continually honing my skills and learning new
+            technologies to stay at the forefront of this dynamic field.
+        </p>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div>
+            <button class="filter-btn" onclick="filterSelection('all')">Show All</button>
+            <button class="filter-btn" onclick="filterSelection('web')">Web Development</button>
+            <button class="filter-btn" onclick="filterSelection('design')">Design</button>
+        </div>
+        <div class="portfolio-item web">
+            <img src="img/project-1" alt="Documentation page">
+            <h3>Documentation page</h3>
+            <p>This is a dedicated page celebrating the life and memory of APJ apdul kalam. It is a permanent memorial where, you, family and friends can remember your loved one and share many memories and photos to celebrate their life.</p>
+        </div>
+        <div class="portfolio-item design">
+            <img src="img/project-3" alt="Landing page">
+            <h3>Landing page</h3>
+            <p> web page that a consumer can land on, but in the marketing realm, it's usually a standalone page, distinct from your homepage or any other page, that serves a single and focused purpose</p>
+        </div>
+        <!-- Add more portfolio items with appropriate classes -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>You can reach me at Ramyaa@email.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Ramya Krishna</p>
+    </footer>
+
+    <script>
+        // JavaScript function to filter portfolio items
+        function filterSelection(category) {
+            const items = document.getElementsByClassName('portfolio-item');
+            if (category === 'all') {
+                for (let item of items) {
+                    item.style.display = 'block';
+                }
+            } else {
+                for (let item of items) {
+                    if (item.classList.contains(category)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
